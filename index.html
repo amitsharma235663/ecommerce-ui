@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LUXE — Premium modern e-commerce. Discover electronics, fashion, watches, shoes and accessories with unbeatable style." />
+  <meta name="keywords" content="luxury, electronics, fashion, watches, shoes, accessories, online shopping" />
+  <meta name="author" content="LUXE Store" />
+  <title>LUXE — Premium Shopping Experience</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================================
+       SCROLL PROGRESS BAR
+  ============================================================ -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       LOADING SCREEN
+  ============================================================ -->
+  <div id="loader" aria-label="Loading LUXE Store">
+    <div class="loader-inner">
+      <div class="loader-logo">LUXE</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header id="navbar" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+      <!-- Logo -->
+      <a href="#" class="nav-logo" aria-label="LUXE Home">
+        <span class="logo-icon">◆</span>LUXE
+      </a>
+
+      <!-- Nav Links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#shop" class="nav-link">Shop</a></li>
+        <li><a href="#categories" class="nav-link">Categories</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Search Toggle -->
+        <button class="nav-btn" id="search-toggle" aria-label="Toggle search" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+
+        <!-- Dark Mode -->
+        <button class="nav-btn" id="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-icon-sun">☀️</span>
+          <span class="theme-icon-moon">🌙</span>
+        </button>
+
+        <!-- Wishlist -->
+        <button class="nav-btn" id="wishlist-btn" aria-label="Open wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="wishlist-count" id="wishlist-count">0</span>
+        </button>
+
+        <!-- Cart -->
+        <button class="nav-btn cart-btn" id="cart-toggle" aria-label="Open cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-bar-container" id="search-bar-container" aria-hidden="true">
+      <div class="search-inner">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" id="search-input" placeholder="Search products, categories…" autocomplete="off" aria-label="Search products" />
+        <button id="search-close" aria-label="Close search">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section id="home" class="hero" aria-label="Hero banner">
+    <!-- Floating Shapes -->
+    <div class="hero-shapes" aria-hidden="true">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+    </div>
+
+    <div class="hero-content">
+      <span class="hero-badge">✦ New Collection 2025</span>
+      <h1 class="hero-title">
+        Redefine Your<br/>
+        <em>Style Story</em>
+      </h1>
+      <p class="hero-desc">
+        Curated luxury across electronics, fashion, and lifestyle. 
+        Every piece, a statement. Every purchase, an experience.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#shop" class="btn btn-primary ripple">
+          Shop Now
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#categories" class="btn btn-ghost">Explore Categories</a>
+      </div>
+      <div class="hero-stats" aria-label="Store statistics">
+        <div class="stat">
+          <span class="stat-num" data-target="2400">0</span><span>+</span>
+          <span class="stat-label">Products</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="98">0</span><span>%</span>
+          <span class="stat-label">Happy Customers</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="150">0</span><span>+</span>
+          <span class="stat-label">Brands</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Visual -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-card glass-card">
+        <div class="hero-card-img">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&q=80" 
+               alt="Premium Watch" loading="lazy" onerror="this.src='https://via.placeholder.com/300x300/8B5CF6/fff?text=LUXE'" />
+        </div>
+        <div class="hero-card-info">
+          <p class="hero-card-name">Precision Timepiece</p>
+          <p class="hero-card-price">$299.00</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CATEGORIES SECTION
+  ============================================================ -->
+  <section id="categories" class="categories-section" aria-label="Product categories">
+    <div class="section-header">
+      <span class="section-eyebrow">Browse by</span>
+      <h2 class="section-title">Categories</h2>
+    </div>
+    <div class="category-filters" id="category-filters" role="group" aria-label="Filter by category">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="electronics">Electronics</button>
+      <button class="filter-btn" data-category="fashion">Fashion</button>
+      <button class="filter-btn" data-category="shoes">Shoes</button>
+      <button class="filter-btn" data-category="watches">Watches</button>
+      <button class="filter-btn" data-category="accessories">Accessories</button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SHOP SECTION
+  ============================================================ -->
+  <section id="shop" class="shop-section" aria-label="Product listings">
+    <div class="shop-header">
+      <div class="section-header">
+        <span class="section-eyebrow">Curated for you</span>
+        <h2 class="section-title">Our Products</h2>
+      </div>
+      <!-- Price Filter -->
+      <div class="price-filter glass-card" aria-label="Price range filter">
+        <label class="price-label">
+          Price Range: <strong id="price-display">$0 — $1000</strong>
+        </label>
+        <div class="range-group">
+          <input type="range" id="price-min" min="0" max="1000" value="0" step="10" aria-label="Minimum price" />
+          <input type="range" id="price-max" min="0" max="1000" value="1000" step="10" aria-label="Maximum price" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="product-grid" aria-live="polite" aria-label="Products">
+      <!-- Populated by JS -->
+    </div>
+
+    <!-- No Results -->
+    <div class="no-results hidden" id="no-results" role="alert">
+      <div class="no-results-icon">🔍</div>
+      <h3>No products found</h3>
+      <p>Try adjusting your search or filter criteria.</p>
+    </div>
+
+    <!-- Load More -->
+    <div class="load-more-container">
+      <button class="btn btn-outline" id="load-more-btn">Load More Products</button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SECTION
+  ============================================================ -->
+  <section id="about" class="about-section" aria-label="About LUXE">
+    <div class="about-content">
+      <div class="section-header">
+        <span class="section-eyebrow">Our Story</span>
+        <h2 class="section-title">About LUXE</h2>
+      </div>
+      <p class="about-text">
+        LUXE was founded on the belief that premium quality should be accessible without compromise. 
+        We curate the world's finest electronics, fashion, and lifestyle products — delivering 
+        an experience as refined as the items we sell.
+      </p>
+      <div class="about-features">
+        <div class="feature glass-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Fast Delivery</h3>
+          <p>Free express shipping on orders over $50</p>
+        </div>
+        <div class="feature glass-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Secure Payments</h3>
+          <p>256-bit SSL encryption on all transactions</p>
+        </div>
+        <div class="feature glass-card">
+          <div class="feature-icon">↩️</div>
+          <h3>Easy Returns</h3>
+          <p>30-day hassle-free return policy</p>
+        </div>
+        <div class="feature glass-card">
+          <div class="feature-icon">💎</div>
+          <h3>Premium Quality</h3>
+          <p>Every product is hand-curated by our team</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section id="contact" class="contact-section" aria-label="Contact us">
+    <div class="section-header">
+      <span class="section-eyebrow">Get in Touch</span>
+      <h2 class="section-title">Contact Us</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info glass-card">
+        <h3>We'd love to hear from you</h3>
+        <p>Our support team is available Monday–Friday, 9am–6pm EST.</p>
+        <div class="contact-item">
+          <span>📧</span> support@luxestore.com
+        </div>
+        <div class="contact-item">
+          <span>📞</span> +1 (800) 555-LUXE
+        </div>
+        <div class="contact-item">
+          <span>📍</span> 1 LUXE Plaza, New York, NY 10001
+        </div>
+      </div>
+      <div class="contact-form glass-card">
+        <div class="form-group">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" placeholder="Your full name" />
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" rows="4" placeholder="How can we help?"></textarea>
+        </div>
+        <button class="btn btn-primary ripple w-full" id="contact-submit">Send Message</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="contact-footer" class="footer" aria-label="Site footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <span class="logo-icon">◆</span>LUXE
+        </a>
+        <p>Redefining the premium shopping experience, one product at a time.</p>
+        <div class="social-links" aria-label="Social media">
+          <a href="#" aria-label="Instagram" class="social-link">📷</a>
+          <a href="#" aria-label="Twitter" class="social-link">𝕏</a>
+          <a href="#" aria-label="Facebook" class="social-link">📘</a>
+          <a href="#" aria-label="YouTube" class="social-link">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul role="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul role="list">
+          <li><a href="#" data-category-link="electronics">Electronics</a></li>
+          <li><a href="#" data-category-link="fashion">Fashion</a></li>
+          <li><a href="#" data-category-link="shoes">Shoes</a></li>
+          <li><a href="#" data-category-link="watches">Watches</a></li>
+          <li><a href="#" data-category-link="accessories">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Get exclusive deals and new arrivals in your inbox.</p>
+        <div class="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="your@email.com" aria-label="Newsletter email" />
+          <button class="btn btn-primary ripple" id="newsletter-submit">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 LUXE Store. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       CART SIDEBAR
+  ============================================================ -->
+  <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+  <aside class="cart-sidebar" id="cart-sidebar" role="complementary" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="cart-close" id="cart-close" aria-label="Close cart">✕</button>
+    </div>
+
+    <!-- Cart Items -->
+    <div class="cart-items" id="cart-items">
+      <!-- Populated by JS -->
+    </div>
+
+    <!-- Empty Cart -->
+    <div class="cart-empty hidden" id="cart-empty">
+      <div class="empty-cart-illustration" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" width="160">
+          <circle cx="100" cy="100" r="80" fill="var(--glass-bg)" stroke="var(--border)" stroke-width="2"/>
+          <path d="M60 80 L70 120 H140 L150 80" stroke="var(--accent)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="80" cy="130" r="6" fill="var(--accent)"/>
+          <circle cx="130" cy="130" r="6" fill="var(--accent)"/>
+          <path d="M50 70 H60 L70 120" stroke="var(--text-muted)" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M90 70 V60 Q90 50 100 50 Q110 50 110 60 V70" stroke="var(--accent)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M88 92 L112 92" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3>Your cart is empty</h3>
+      <p>Discover our premium collection and add something beautiful.</p>
+      <button class="btn btn-primary ripple" id="empty-cart-shop">Start Shopping</button>
+    </div>
+
+    <!-- Cart Footer -->
+    <div class="cart-footer" id="cart-footer">
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">$0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax (8%)</span>
+          <span id="cart-tax">$0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span id="cart-shipping">Free</span>
+        </div>
+        <div class="summary-divider" aria-hidden="true"></div>
+        <div class="summary-row total">
+          <span>Total</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+      </div>
+      <button class="btn btn-primary ripple w-full" id="checkout-btn">
+        Checkout
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <button class="btn btn-ghost w-full" id="clear-cart-btn">Clear Cart</button>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       WISHLIST SIDEBAR
+  ============================================================ -->
+  <div class="wishlist-overlay" id="wishlist-overlay" aria-hidden="true"></div>
+  <aside class="wishlist-sidebar" id="wishlist-sidebar" role="complementary" aria-label="Wishlist" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Wishlist ♥</h2>
+      <button class="cart-close" id="wishlist-close" aria-label="Close wishlist">✕</button>
+    </div>
+    <div class="cart-items" id="wishlist-items">
+      <!-- Populated by JS -->
+    </div>
+    <div class="cart-empty hidden" id="wishlist-empty">
+      <div class="empty-cart-illustration" aria-hidden="true">💝</div>
+      <h3>Your wishlist is empty</h3>
+      <p>Heart items you love to save them for later.</p>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       PRODUCT QUICK VIEW MODAL
+  ============================================================ -->
+  <div class="modal-overlay hidden" id="modal-overlay" role="dialog" aria-modal="true" aria-label="Product quick view">
+    <div class="modal glass-card" id="product-modal">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">✕</button>
+      <div class="modal-body" id="modal-body">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NEWSLETTER POPUP
+  ============================================================ -->
+  <div class="popup-overlay hidden" id="popup-overlay" role="dialog" aria-modal="true" aria-label="Newsletter signup">
+    <div class="popup glass-card" id="newsletter-popup">
+      <button class="popup-close" id="popup-close" aria-label="Close popup">✕</button>
+      <div class="popup-content">
+        <div class="popup-icon" aria-hidden="true">✉️</div>
+        <h2>Get 10% Off Your First Order</h2>
+        <p>Subscribe to our newsletter for exclusive deals and new arrivals.</p>
+        <div class="popup-form">
+          <input type="email" id="popup-email" placeholder="Enter your email" aria-label="Email for newsletter" />
+          <button class="btn btn-primary ripple" id="popup-subscribe">Subscribe & Save</button>
+        </div>
+        <button class="popup-skip" id="popup-skip">No thanks, I'll pay full price</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CHECKOUT SUCCESS POPUP
+  ============================================================ -->
+  <div class="popup-overlay hidden" id="checkout-overlay" role="dialog" aria-modal="true" aria-label="Order confirmed">
+    <div class="popup glass-card checkout-popup" id="checkout-popup">
+      <div class="popup-content">
+        <div class="checkout-animation" aria-hidden="true">
+          <div class="checkmark-circle">
+            <svg class="checkmark" viewBox="0 0 52 52">
+              <circle class="checkmark-circle-path" cx="26" cy="26" r="25" fill="none"/>
+              <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+          </div>
+        </div>
+        <h2>Order Confirmed! 🎉</h2>
+        <p>Thank you for shopping with LUXE. Your order has been placed and will be delivered within 3–5 business days.</p>
+        <p class="order-id">Order #LX<span id="order-number"></span></p>
+        <button class="btn btn-primary ripple" id="checkout-continue">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TOAST CONTAINER
+  ============================================================ -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-label="Notifications"></div>
+
+  <!-- ============================================================
+       BACK TO TOP
+  ============================================================ -->
+  <button class="back-to-top hidden" id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
